@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./pages/index.css" />
+    <title>Mesto</title>
+  </head>
+  <body class="page">
+    <header class="header">
+      <img
+        class="header__logo"
+        src="./images/mesto-russia.svg"
+        alt="логотип место"
+      />
+      <img
+        class="header__line"
+        src="./images/line.svg"
+        alt="разделяющая линия"
+      />
+    </header>
+    <main class="content">
+      <section class="profile">
+        <img
+          class="profile__photo"
+          src="./images/profile-photo.jpg"
+          alt="фото профиля"
+        />
+        <div class="profile__text-container">
+          <h1 class="profile__title">Жак-Ив Кусто</h1>
+          <p class="profile__subtitle">Исследователь океана</p>
+        </div>
+        <a class="profile__edit-link" href="#"
+          ><img
+            class="profile__edit-button"
+            src="./images/Edit-profile-button (1).svg"
+            alt="кнопка изменить профиль"
+        /></a>
+        <a class="profile__add-link" href="#"
+          ><img
+            class="profile__add-button"
+            src="./images/add-profile-button (1).svg"
+            alt="кнопка + профиля"
+        /></a>
+      </section>
+      <section class="elements">
+        <div class="cards">
+          <div class="card">
+            <img
+              class="card__image"
+              src="./images/moscow-strogino.jpg"
+              alt="москва строгино"
+            />
+            <div class="card__info">
+              <p class="card__subtitle">Строгино</p>
+              <a class="card__heart-link" href="#"
+                ><img
+                  class="card__heart-button"
+                  src="./images/heart-button-normal.svg"
+                  alt="кнопка сердце"
+              /></a>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              class="card__image"
+              src="./images/abhaz-ldzaa.jpg"
+              alt="абхазия лдзаа"
+            />
+            <div class="card__info">
+              <h2 class="card__subtitle">Абхазия, Лдзааaaaaaaaaa</h2>
+              <!--неправильно написал название, чтобы проверить, что не влезший текст заменяется троеточием-->
+              <a class="card__heart-link" href="#"
+                ><img
+                  class="card__heart-button"
+                  src="./images/heart-button-normal.svg"
+                  alt="кнопка сердце"
+              /></a>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card__image" src="./images/sochi.jpg" alt="сочи" />
+            <div class="card__info">
+              <p class="card__subtitle">Сочи</p>
+              <a class="card__heart-link" href="#"
+                ><img
+                  class="card__heart-button"
+                  src="./images/heart-button-normal.svg"
+                  alt="кнопка сердце"
+              /></a>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              class="card__image"
+              src="./images/sochi-macesta.jpg"
+              alt="мацеста"
+            />
+            <div class="card__info">
+              <p class="card__subtitle">Мацеста</p>
+              <a class="card__heart-link" href="#"
+                ><img
+                  class="card__heart-button"
+                  src="./images/heart-button-normal.svg"
+                  alt="кнопка сердце"
+              /></a>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              class="card__image"
+              src="./images/austria-tux.jpg"
+              alt="австрия тукс"
+            />
+            <div class="card__info">
+              <p class="card__subtitle">Австрия, Тукс</p>
+              <a class="card__heart-link" href="#"
+                ><img
+                  class="card__heart-button"
+                  src="./images/heart-button-normal.svg"
+                  alt="кнопка сердце"
+              /></a>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card__image" src="./images/pestovo.jpg" alt="пестово" />
+            <div class="card__info">
+              <p class="card__subtitle">Пестово</p>
+              <a class="card__heart-link" href="#"
+                ><img
+                  class="card__heart-button"
+                  src="./images/heart-button-normal.svg"
+                  alt="кнопка сердце"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <img class="footer__copyright" src="./images/footer-copyright.svg" alt="место 2020">
+    </footer>
+    <div class="popup">
+      <div class="popup__background"></div>
+      <div class="profile-form"></div>
+    </div>
+  </body>
+</html>

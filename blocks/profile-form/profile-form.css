@@ -1,0 +1,9 @@
+.profile-form{
+    width: 430px;
+    height: 330px;
+    background-color: #FFFFFF;
+    position: fixed;
+    margin: auto;
+    z-index: 3;
+    opacity: 1;
+}

@@ -1,0 +1,8 @@
+.card__heart-button{
+    width: 22px;
+    height: 19px;
+}
+
+.card__heart-button:hover{
+    opacity: 0.5;
+}

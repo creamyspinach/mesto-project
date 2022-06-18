@@ -1,0 +1,5 @@
+.profile__edit-link{
+    display: flex;
+    margin: 34px 0 0 18px;
+    align-self: start;
+}
