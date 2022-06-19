@@ -1,6 +1,7 @@
 .popup-form{
     width: 80%;
     max-width: 430px;
+    min-width: 282px;
     height: 330px;
     background-color: #FFFFFF;
     position: fixed;
@@ -11,4 +12,10 @@
     border-radius: 10px;
     margin: 0;
     padding: 0;
+}
+
+@media screen and (max-width: 500px) {
+    .popup-form{
+        height: 322px;
+    }
 }

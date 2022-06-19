@@ -5,3 +5,16 @@
     margin: 34px 0 0 36px;
     align-self: start;
 }
+
+@media screen and (max-width: 500px) {
+    .popup-form__heading{
+        font-size: 18px;
+        line-height: 22px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .popup-form__heading{
+        margin-left: 22px;
+    }
+}
