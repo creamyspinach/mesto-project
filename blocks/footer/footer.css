@@ -3,3 +3,11 @@
     padding-top: 67px;
     padding-bottom: 60px;
 }
+
+@media screen and (max-width: 900px) {
+    .footer{
+        padding-left: 19px;
+        padding-top: 48px;
+        padding-bottom: 36px;
+    }
+}

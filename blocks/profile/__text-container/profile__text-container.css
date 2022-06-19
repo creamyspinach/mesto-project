@@ -1,6 +1,21 @@
 .profile__text-container{
-    display: flex;
-    flex-direction: column;
+    display: grid;
     margin-left: 30px;
-    justify-content: center;
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: auto auto;
+    row-gap: 16px;
+    column-gap: 18px;
+}
+
+@media screen and (max-width: 700px) {
+    .profile__text-container{
+        margin: 26px 0 27px 36px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .profile__text-container{
+        row-gap: 14px;
+        column-gap: 10px;
+    }
 }

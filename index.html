@@ -14,11 +14,6 @@
         src="./images/mesto-russia.svg"
         alt="логотип место"
       />
-      <img
-        class="header__line"
-        src="./images/line.svg"
-        alt="разделяющая линия"
-      />
     </header>
     <main class="content">
       <section class="profile">
@@ -29,20 +24,23 @@
         />
         <div class="profile__text-container">
           <h1 class="profile__title">Жак-Ив Кусто</h1>
+          <a class="profile__edit-link" href="#"
+            ><img
+              class="profile__edit-button"
+              src="./images/Edit-profile-button (1).svg"
+              alt="кнопка изменить профиль"
+          /></a>
           <p class="profile__subtitle">Исследователь океана</p>
         </div>
-        <a class="profile__edit-link" href="#"
-          ><img
-            class="profile__edit-button"
-            src="./images/Edit-profile-button (1).svg"
-            alt="кнопка изменить профиль"
-        /></a>
-        <a class="profile__add-link" href="#"
-          ><img
-            class="profile__add-button"
-            src="./images/add-profile-button (1).svg"
-            alt="кнопка + профиля"
-        /></a>
+        <a class="profile__add-link" href="#">
+          <div class="profile__add-box">
+            <img
+              class="profile__add-button"
+              src="./images/profile-add-button.svg"
+              alt="кнопка + профиля"
+            />
+          </div>
+        </a>
       </section>
       <section class="elements">
         <div class="cards">
@@ -139,11 +137,21 @@
       </section>
     </main>
     <footer class="footer">
-      <img class="footer__copyright" src="./images/footer-copyright.svg" alt="место 2020">
+      <img
+        class="footer__copyright"
+        src="./images/footer-copyright.svg"
+        alt="место 2020"
+      />
     </footer>
     <div class="popup">
-      <div class="popup__background"></div>
-      <div class="profile-form"></div>
+      <div class="popup__background">
+        <fieldset class="popup-form">
+          <h2 class="popup-form__heading">Редактировать профиль</h2>
+          <input class="popup-form__item" type="text" />
+          <input class="popup-form__item" type="text" />
+          <input class="popup-form__button" value="сохранить" type="submit" />
+        </fieldset>
+      </div>
     </div>
   </body>
 </html>

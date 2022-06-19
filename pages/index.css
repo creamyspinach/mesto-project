@@ -25,12 +25,12 @@
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);
 @import url(../blocks/popup/popup.css);
-@import url(../blocks/profile-form/profile-form.css);
+@import url(../blocks/popup-form/popup-form.css);
 @import url(../blocks/popup/__background/popup__background.css);
-@import url();
-@import url();
-@import url();
-@import url();
+@import url(../blocks/popup-form/__heading/popup-form__heading.css);
+@import url(../blocks/popup-form/__item/popup-form__item.css);
+@import url(../blocks/popup-form/__button/popup-form__button.css);
+@import url(../blocks/profile/__add-box/profile__add-box.css);
 @import url();
 @import url();
 @import url();

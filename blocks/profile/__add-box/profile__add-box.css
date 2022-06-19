@@ -1,0 +1,28 @@
+.profile__add-box{
+    width: 150px;
+    height: 50px;
+    box-sizing: border-box;
+    border: 2px solid #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 0 auto;
+    align-self: center;
+    border-radius: 2px;
+}
+
+.profile__add-box:hover{
+    opacity: 0.6;;
+}
+
+@media screen and (max-width: 700px) {
+    .profile__add-box{
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .profile__add-box{
+        width: 100%;
+    }
+}
