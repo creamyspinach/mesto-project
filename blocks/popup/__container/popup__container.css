@@ -2,7 +2,6 @@
     width: 80%;
     max-width: 430px;
     min-width: 282px;
-    height: 330px;
     background-color: #FFFFFF;
     position: fixed;
     z-index: 3;
@@ -10,10 +9,11 @@
     align-items: center;
     flex-direction: column;
     border-radius: 10px;
+    padding-bottom: 37px;
 }
 
 @media screen and (max-width: 500px) {
     .popup__container{
-        height: 322px;
+        padding-bottom: 25px;
     }
 }

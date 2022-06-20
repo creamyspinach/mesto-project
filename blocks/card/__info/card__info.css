@@ -1,7 +1,6 @@
 .card__info{
     background-color: #FFFFFF;
     width: 100%;
-    height: 100%;
-    height: 79px;
+    min-height: 79px;
     display: flex;
 }

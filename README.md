@@ -28,4 +28,6 @@
 
 **открыть popup без js**
 
-* ./blocks/popup/popup.css -> у селектора .popup закомментировать свойство display: none
+* index.html > строка 99 > блоку popup вписать модификатор popup_active, чтобы получилось class="popup popup_active"
+                                        или
+    ./blocks/popup/popup.css -> у селектора .popup закомментировать свойство display: none
