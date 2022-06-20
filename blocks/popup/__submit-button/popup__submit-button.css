@@ -8,6 +8,12 @@
     cursor: pointer;
     border-radius: 2px;
     height: 50px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    border: 0;
+    text-transform: capitalize;
 }
 
 .popup__submit-button:hover{
@@ -18,5 +24,7 @@
     .popup__submit-button{
         height: 46px;
         margin-top: 45px;
+        font-size: 14px;
+        line-height: 17px;
     }
 }

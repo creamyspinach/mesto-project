@@ -3,7 +3,7 @@
     flex-direction: column;
     width: 100%;
     box-sizing: border-box;
-    border-bottom: 1px solid rgba(84, 84, 84, 1);
+    border-bottom: 1px solid rgba(84, 84, 84, 0.7);
     padding-bottom: 41px;
 }
 
