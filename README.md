@@ -26,5 +26,6 @@
 
 
 
-**открыть popup**
-./blocks/popup/popup.css -> закомментировать свойство .popup{display: none}
+**открыть popup без js**
+
+* ./blocks/popup/popup.css -> у селектора .popup закомментировать свойство display: none

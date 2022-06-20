@@ -4,4 +4,12 @@
     cursor: pointer;
     border: 0;
     padding: 0;
+    width: 22px;
+    height: 19px;
+    background-size: contain;
+    background-image: url(../../../images/heart-button-normal.svg);
+}
+
+.card__heart-button:hover{
+    opacity: 0.5;
 }

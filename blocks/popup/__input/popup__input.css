@@ -1,6 +1,5 @@
-.popup-form__item{
-    width: 84%;
-    min-width: 238px;
+.popup__input{
+    width: 100%;
     font-family: inherit;
     box-sizing: border-box;
     border-top: 0;
@@ -9,8 +8,7 @@
     border-bottom: #CCCCCC 1px solid;
     margin-top: 30px;
     padding: 0;
-}
-
-.popup-form__item:first-of-type{
-    margin-top: 54px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
 }

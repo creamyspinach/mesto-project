@@ -1,4 +1,4 @@
-.popup-form{
+.popup__container{
     width: 80%;
     max-width: 430px;
     min-width: 282px;
@@ -10,12 +10,10 @@
     align-items: center;
     flex-direction: column;
     border-radius: 10px;
-    margin: 0;
-    padding: 0;
 }
 
 @media screen and (max-width: 500px) {
-    .popup-form{
+    .popup__container{
         height: 322px;
     }
 }

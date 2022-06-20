@@ -51,12 +51,7 @@
             />
             <div class="card__info">
               <h2 class="card__subtitle">Строгино</h2>
-              <button class="card__heart-button" type="button"
-                ><img
-                  class="card__heart-image"
-                  src="./images/heart-button-normal.svg"
-                  alt="кнопка сердце"
-              /></button>
+              <button class="card__heart-button" type="button"></button>
             </div>
           </li>
           <li class="card">
@@ -66,26 +61,16 @@
               alt="абхазия лдзаа"
             />
             <div class="card__info">
-              <h2 class="card__subtitle">Абхазия, Лдзааaaaaaaaaa</h2>
+              <h2 class="card__subtitle">Абхазия, Лдзаааааааааааааааааа</h2>
               <!--неправильно написал название, чтобы проверить, что не влезший текст заменяется троеточием-->
-              <button class="card__heart-button" type="button"
-                ><img
-                  class="card__heart-image"
-                  src="./images/heart-button-normal.svg"
-                  alt="кнопка сердце"
-              /></button>
+              <button class="card__heart-button" type="button"></button>
             </div>
           </li>
           <li class="card">
             <img class="card__image" src="./images/sochi.jpg" alt="сочи" />
             <div class="card__info">
               <h2 class="card__subtitle">Сочи</h2>
-              <button class="card__heart-button" type="button"
-                ><img
-                  class="card__heart-image"
-                  src="./images/heart-button-normal.svg"
-                  alt="кнопка сердце"
-              /></button>
+              <button class="card__heart-button" type="button"></button>
             </div>
           </li>
           <li class="card">
@@ -96,12 +81,7 @@
             />
             <div class="card__info">
               <h2 class="card__subtitle">Мацеста</h2>
-              <button class="card__heart-button" type="button"
-                ><img
-                  class="card__heart-image"
-                  src="./images/heart-button-normal.svg"
-                  alt="кнопка сердце"
-              /></button>
+              <button class="card__heart-button" type="button"></button>
             </div>
           </li>
           <li class="card">
@@ -112,53 +92,45 @@
             />
             <div class="card__info">
               <h2 class="card__subtitle">Австрия, Тукс</h2>
-              <button class="card__heart-button" type="button"
-                ><img
-                  class="card__heart-image"
-                  src="./images/heart-button-normal.svg"
-                  alt="кнопка сердце"
-              /></button>
+              <button class="card__heart-button" type="button"></button>
             </div>
           </li>
           <li class="card">
             <img class="card__image" src="./images/pestovo.jpg" alt="пестово" />
             <div class="card__info">
               <h2 class="card__subtitle">Пестово</h2>
-              <button class="card__heart-button" type="button"
-                ><img
-                  class="card__heart-image"
-                  src="./images/heart-button-normal.svg"
-                  alt="кнопка сердце"
-              /></button>
+              <button class="card__heart-button" type="button"></button>
             </div>
           </li>
         </ul>
       </section>
     </main>
     <footer class="footer">
-      <img
-        class="footer__copyright"
-        src="./images/footer-copyright.svg"
-        alt="место 2020"
-      />
+      <p class="footer__copyright">© 2020 Mesto Russia</p>
     </footer>
     <div class="popup">
-      <div class="popup__background">
-        <fieldset class="popup-form">
-          <img
-            class="popup-form__close-button"
-            src="./images/close-x-button (1).svg"
-            alt="кнопка закрытия формы"
+      <div class="popup__container">
+        <button class="popup__close-button" type="button"></button>
+        <h3 class="popup__heading">Редактировать профиль</h3>
+        <form class="popup__form" name="popup__form">
+          <input 
+            class="popup__input" 
+            name="popup__input-1" 
+            value="Жак-Ив Кусто" 
+            type="text" 
           />
-          <h2 class="popup-form__heading">Редактировать профиль</h2>
-          <input class="popup-form__item" type="text" />
-          <input class="popup-form__item" type="text" />
-          <input
-            class="popup-form__submit-button"
-            value="сохранить"
-            type="submit"
+          <input 
+            class="popup__input" 
+            name="popup__input-2" 
+            value="Исследователь океана" 
+            type="text" 
           />
-        </fieldset>
+          <input 
+            class="popup__submit-button" 
+            value="сохранить" 
+            type="submit" 
+          />
+        </form>
       </div>
     </div>
   </body>
