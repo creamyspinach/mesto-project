@@ -1,4 +1,4 @@
-.card__heart-button{
+.card__heart-button_active{
     margin: 30px 20px auto auto;
     background-color: transparent;
     cursor: pointer;
@@ -7,11 +7,11 @@
     width: 22px;
     height: 19px;
     background-size: contain;
-    background-image: url(../../../images/heart-button-normal.svg);
+    background-image: url(../../../../images/heart-button-active.svg);
     background-repeat: no-repeat;
-    transition: 400ms ease;
+    transition: 400ms ease ;
 }
 
-.card__heart-button:hover{
+.card__heart-button_active:hover{
     opacity: 0.5;
 }
