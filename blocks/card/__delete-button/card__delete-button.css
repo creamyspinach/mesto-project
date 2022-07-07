@@ -16,7 +16,6 @@
     transition: opacity 300ms ease;
 }
 
-
 .card:hover .card__delete-button{
     display: block;
 }
