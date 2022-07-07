@@ -102,9 +102,9 @@
     <footer class="footer">
       <p class="footer__copyright">© 2020 Mesto Russia</p>
     </footer>
-    <div class="popup">
+    <div class="popup" id="popup-edit">
       <div class="popup__container">
-        <button class="popup__close-button" type="button"></button>
+        <button class="popup__close-button" id="popup-edit__close-button" type="button"></button>
         <h3 class="popup__heading">Редактировать профиль</h3>
         <form class="popup__form" name="popup__form">
           <input
@@ -129,6 +129,34 @@
         </form>
       </div>
     </div>
+    <div class="popup" id="popup-add">
+      <div class="popup__container">
+        <button class="popup__close-button" id="popup-add__close-button" type="button"></button>
+        <h3 class="popup__heading">Новое место</h3>
+        <form class="popup__form" name="popup__form">
+          <input
+            class="popup__input"
+            id="popup-add__input-1"
+            name="popup__input-1"
+            placeholder="Название"
+            type="text"
+          />
+          <input
+            class="popup__input"
+            id="popup-add__input-2"
+            name="popup__input-2"
+            placeholder="Ссылка на картинку"
+            type="text"
+          />
+          <input 
+          class="popup__submit-button" 
+          id="popup-add__submit-button"
+          value="сохранить" 
+          type="submit" 
+          />
+        </form>
+      </div>
+    </div>
   </body>
   <template id="profile-template">
     <div class="profile__text-container">
@@ -136,6 +164,19 @@
       <button class="profile__edit-button" type="button"></button>
       <p class="profile__subtitle"></p>
     </div>
+  </template>
+  <template id="card-template">
+    <li class="card">
+      <button class="card__delete-button"></button>
+      <img
+        class="card__image"
+        alt="изображение, добавленное пользователем"
+      />
+      <div class="card__info">
+        <h2 class="card__subtitle"></h2>
+        <button class="card__heart-button" type="button"></button>
+      </div>
+    </li>
   </template>
   <script src="script.js"></script>
 </html>
