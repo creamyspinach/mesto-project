@@ -6,7 +6,6 @@ deleteButton.addEventListener('click', function(evt) {
 });*/
 
 
-
 const profileEditButton = document.querySelector('.profile__edit-button');
 const editPopup = document.querySelector('#popup-edit');
 
@@ -37,9 +36,9 @@ editPopupSubmitButton.addEventListener('click', function(event){
     const editPopupTitle = document.querySelector('#popup__input-1');
     const editPopupSubtitle = document.querySelector('#popup__input-2');
 
-    editPopup.classList.remove('popup_active');
-
     addValueToProfile(editPopupTitle.value, editPopupSubtitle.value);
+
+    editPopup.classList.remove('popup_active');
 });
 
 profieEditCloseButton.addEventListener('click', function() {
