@@ -31,7 +31,7 @@
       </section>
       <section class="elements">
         <ul class="elements__cards">
-          <li class="card">
+          <!-- <li class="card">
             <button class="card__delete-button"></button>
             <img
               class="card__image"
@@ -52,7 +52,6 @@
             />
             <div class="card__info">
               <h2 class="card__subtitle">Абхазия, Лдзаааааааааааааааааа</h2>
-              <!--неправильно написал название, чтобы проверить, что не влезший текст заменяется троеточием-->
               <button class="card__heart-button" type="button"></button>
             </div>
           </li>
@@ -95,7 +94,7 @@
               <h2 class="card__subtitle">Пестово</h2>
               <button class="card__heart-button" type="button"></button>
             </div>
-          </li>
+          </li> -->
         </ul>
       </section>
     </main>
@@ -104,7 +103,11 @@
     </footer>
     <div class="popup" id="popup-edit">
       <div class="popup__container">
-        <button class="popup__close-button" id="popup-edit__close-button" type="button"></button>
+        <button
+          class="popup__close-button"
+          id="popup-edit__close-button"
+          type="button"
+        ></button>
         <h3 class="popup__heading">Редактировать профиль</h3>
         <form class="popup__form" name="popup__form">
           <input
@@ -121,16 +124,24 @@
             value="Исследователь океана"
             type="text"
           />
+<<<<<<< HEAD
           <input 
           class="popup__submit-button" 
           value="сохранить" 
           type="button"          />
+=======
+          <input class="popup__submit-button" value="сохранить" type="submit" />
+>>>>>>> feature-like
         </form>
       </div>
     </div>
     <div class="popup" id="popup-add">
       <div class="popup__container">
-        <button class="popup__close-button" id="popup-add__close-button" type="button"></button>
+        <button
+          class="popup__close-button"
+          id="popup-add__close-button"
+          type="button"
+        ></button>
         <h3 class="popup__heading">Новое место</h3>
         <form class="popup__form" name="popup__form">
           <input
@@ -149,11 +160,11 @@
             value=""
             type="text"
           />
-          <input 
-          class="popup__submit-button" 
-          id="popup-add__submit-button"
-          value="сохранить" 
-          type="submit" 
+          <input
+            class="popup__submit-button"
+            id="popup-add__submit-button"
+            value="сохранить"
+            type="submit"
           />
         </form>
       </div>
@@ -169,15 +180,24 @@
   <template id="card-template">
     <li class="card">
       <button class="card__delete-button"></button>
-      <img
-        class="card__image"
-        alt="изображение, добавленное пользователем"
-      />
+      <img class="card__image" alt="изображение, добавленное пользователем" />
       <div class="card__info">
         <h2 class="card__subtitle"></h2>
         <button class="card__heart-button" type="button"></button>
       </div>
     </li>
+  </template>
+  <template id="popup-card-template">
+    <div class="popup-card">
+      <div class="popup-card__container">
+        <button class="popup-card__close-button"></button>
+        <img
+          class="popup-card__image"
+          alt="показ картинки"
+        />
+        <label class="popup-card__label" for="popup-image"></label>
+      </div>
+    </div>
   </template>
   <script src="script.js"></script>
 </html>
