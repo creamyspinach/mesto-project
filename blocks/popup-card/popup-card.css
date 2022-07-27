@@ -9,5 +9,15 @@
     left: 0;
     background-color: rgba(0, 0, 0, 0.9);
     z-index: 2;
-    transition: 400ms ease;
+    animation: fade-in 400ms ease;
+}
+
+@keyframes fade-in {
+    0% {
+         opacity: 0;
+    }
+
+    100% {
+         opacity: 1;
+    }
 }
