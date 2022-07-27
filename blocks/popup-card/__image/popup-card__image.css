@@ -1,0 +1,7 @@
+.popup-card__image{
+    z-index: 2;
+    max-width: 80vw;
+    max-height: 540px;
+    object-fit: contain;
+    transition: 400ms ease;
+}

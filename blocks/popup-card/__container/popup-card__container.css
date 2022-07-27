@@ -1,0 +1,6 @@
+.popup-card__container{
+    display: flex;
+    flex-direction: column;
+    width: 1fr;
+    position: relative;
+}
