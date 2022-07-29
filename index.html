@@ -105,7 +105,6 @@
       <div class="popup__container">
         <button
           class="popup__close-button"
-          id="popup-edit__close-button"
           type="button"
         ></button>
         <h3 class="popup__heading">Редактировать профиль</h3>
@@ -132,7 +131,6 @@
       <div class="popup__container">
         <button
           class="popup__close-button"
-          id="popup-add__close-button"
           type="button"
         ></button>
         <h3 class="popup__heading">Новое место</h3>
@@ -155,21 +153,26 @@
           />
           <input
             class="popup__submit-button"
-            id="popup-add__submit-button"
             value="сохранить"
             type="submit"
           />
         </form>
       </div>
     </div>
-  </body>
-  <template id="profile-template">
-    <div class="profile__text-container">
-      <h1 class="profile__title"></h1>
-      <button class="profile__edit-button" type="button"></button>
-      <p class="profile__subtitle"></p>
+    <div class="popup popup_darker popup-card">
+      <div class="popup__card-container">
+        <button
+          class="popup__close-button"
+          type="button"
+        ></button>
+        <img
+          class="popup__image"
+          alt=""
+        />
+        <label class="popup__label" >asdfasdf</label>
+      </div>
     </div>
-  </template>
+  </body>
   <template id="card-template">
     <li class="card">
       <button class="card__delete-button"></button>
@@ -179,18 +182,6 @@
         <button class="card__heart-button" type="button"></button>
       </div>
     </li>
-  </template>
-  <template id="popup-card-template">
-    <div class="popup-card">
-      <div class="popup-card__container">
-        <button class="popup-card__close-button"></button>
-        <img
-          class="popup-card__image"
-          alt="показ картинки"
-        />
-        <label class="popup-card__label" for="popup-image"></label>
-      </div>
-    </div>
   </template>
   <script src="script.js"></script>
 </html>

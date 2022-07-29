@@ -1,0 +1,11 @@
+.popup__label{
+        color: white;
+        text-overflow: ellipsis;
+        max-width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        font-size: 12px;
+        line-height: 15px;
+        margin-top: 10px;
+    
+}

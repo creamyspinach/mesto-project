@@ -1,57 +1,47 @@
 let elements = document.querySelector('.elements');
-/*const deleteButton = elements.querySelector('.card__delete-button');
-deleteButton.addEventListener('click', function(evt) {
-    const deleteCard = deleteButton.closest('.card');
-    evt.target.deleteCard.remove();
-});*/
 
+const profileTC = document.querySelector('.profile__text-container');
+const profileTitle = profileTC.querySelector('.profile__title');
+const profileSubtitle = profileTC.querySelector('.profile__subtitle');
+const profileEditButton = profileTC.querySelector('.profile__edit-button');
+const popupEdit = document.querySelector('#popup-edit');
+const popupEditSubmitButton = popupEdit.querySelector('.popup__submit-button');
+const profileEditCloseButton = popupEdit.querySelector('.popup__close-button');
 
-const profileEditButton = document.querySelector('.profile__edit-button');
-const editPopup = document.querySelector('#popup-edit');
-
-profileEditButton.addEventListener('click', function() { 
-    editPopup.classList.add('popup_active');
+profileEditButton.addEventListener('click', function() {
+  openPopup(popupEdit);
 });
 
+profileEditCloseButton.addEventListener('click', function() {
+  closePopup(popupEdit);
+});
 
-const editPopupSubmitButton = document.querySelector('.popup__submit-button');
-const profieEditCloseButton = document.querySelector('#popup-edit__close-button');
+popupEditSubmitButton.addEventListener('click', addValueToProfile);
 
-
-function addValueToProfile (titleValue, subtitleValue) { // довавление title & subtitle из формы в профиль
-    const profile = document.querySelector('.profile'); 
-    const profileTC = profile.querySelector('.profile__text-container'); // нашли элемент, который заменим
-
-    const profileTemplate = document.querySelector('#profile-template').content; // нашли сделанный шаблон и взяли все содержимое
-    const profileTemplateTC = profileTemplate.querySelector('.profile__text-container').cloneNode(true); // в темплейте нашли и клонировали все содержимое 
-    profileTemplateTC.querySelector('.profile__title').textContent = titleValue;
-    profileTemplateTC.querySelector('.profile__subtitle').textContent = subtitleValue;
-
-    profileTC.replaceWith(profileTemplateTC);
+function addValueToProfile(evt){
+  evt.preventDefault();
+  const titleValue = popupEdit.querySelector('#popup__input-1').value;
+  const subtitleValue = popupEdit.querySelector('#popup__input-2').value;
+  profileTitle.textContent = titleValue;
+  profileSubtitle.textContent = subtitleValue;
+  closePopup(popupEdit);
 }
 
-editPopupSubmitButton.addEventListener('click', function(event){
-    event.preventDefault(); //без этого действия страница обновлялась и символы из формы не попадали в профиль
-    const editPopupTitle = document.querySelector('#popup__input-1');
-    const editPopupSubtitle = document.querySelector('#popup__input-2');
+function openPopup(element) {
+  element.classList.add('popup_active');
+}
 
-    addValueToProfile(editPopupTitle.value, editPopupSubtitle.value);
-
-    editPopup.classList.remove('popup_active');
-});
-
-profieEditCloseButton.addEventListener('click', function() {
-    editPopup.classList.remove('popup_active');
-});
+function closePopup(element) {
+  element.classList.remove('popup_active');
+}
 
 
 const profileAddButton = document.querySelector('.profile__add-button');
-const addPopup = document.querySelector('#popup-add');
+const popupAdd = document.querySelector('#popup-add');
 
 profileAddButton.addEventListener('click', function(){
-    addPopup.classList.add('popup_active');
+    openPopup(popupAdd);
 });
-
 
 
 
@@ -78,19 +68,17 @@ function addCard (cardName, cardImgSrc) {
     cardList.prepend(cardElement);
 }
 
+
 function showCard(imgSrc, label) {
-  const body = document.querySelector('.page');
-  const popupCardTemplate = document.querySelector('#popup-card-template').content;
-  const popupCard = popupCardTemplate.querySelector('.popup-card').cloneNode(true);
-
-  popupCard.querySelector('.popup-card__image').src = imgSrc;
-  popupCard.querySelector('.popup-card__label').textContent = label;
-
-  popupCard.querySelector('.popup-card__close-button').addEventListener('click', function(){
-    popupCard.remove();
-  });
   
-  body.append(popupCard);
+  const popupCard = document.querySelector('.popup-card');
+  openPopup(popupCard);
+  popupCard.querySelector('.popup__image').src = imgSrc;
+  popupCard.querySelector('.popup__label').textContent = label;
+
+  popupCard.querySelector('.popup__close-button').addEventListener('click', function(){
+    closePopup(popupCard);
+  });
 }
 
 
@@ -126,22 +114,22 @@ initialCards.forEach(function(item){
   addCard(item.name, item.link);
 });
 
-const addPopupSubmitButton = document.querySelector('#popup-add__submit-button');
+const popupAddSubmitButton = popupAdd.querySelector('.popup__submit-button');
 
-addPopupSubmitButton.addEventListener('click', function(event){
-    event.preventDefault();
+popupAddSubmitButton.addEventListener('click', function(evt){
+    evt.preventDefault();
     const addPopupName = document.querySelector('#popup-add__input-1');
     const addPopupImgSrc = document.querySelector('#popup-add__input-2');
 
     addCard(addPopupName.value, addPopupImgSrc.value);
 
-    addPopup.classList.remove('popup_active');
+    closePopup(popupAdd);
 });
 
-const addPopupCloseButton = document.querySelector('#popup-add__close-button');
+const popupAddCloseButton = popupAdd.querySelector('.popup__close-button');
 
-addPopupCloseButton.addEventListener('click', function() {
-    addPopup.classList.remove('popup_active');
+popupAddCloseButton.addEventListener('click', function() {
+    closePopup(popupAdd);
 });
 
 
