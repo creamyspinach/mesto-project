@@ -5,17 +5,20 @@ const profileSubtitle = profileTC.querySelector('.profile__subtitle');
 const profileEditButton = profileTC.querySelector('.profile__edit-button');
 const popupEdit = document.querySelector('#popup-edit');
 const popupEditForm = popupEdit.querySelector('.popup__form');
-const popupInput1 = popupEdit.querySelector('#popup__input-1');
-const popupInput2 = popupEdit.querySelector('#popup__input-2');
+const popupInputTitle = popupEdit.querySelector('#popup__input-1');
+const popupInputSubtitle = popupEdit.querySelector('#popup__input-2');
 const profileAddButton = document.querySelector('.profile__add-button');
 const popupAdd = document.querySelector('#popup-add');
 const cardList = document.querySelector('.elements__cards');
 const cardTemplate = document.querySelector('#card-template').content;
 const popupAddSubmitForm = popupAdd.querySelector('.popup__form');
 const popupCard = document.querySelector('.popup-card');
+const popupCardImage = popupCard.querySelector('.popup__image');
+const popupCardLabel = popupCard.querySelector('.popup__label');
 const closeButtons = document.querySelectorAll('.popup__close-button');
 const addPopupName = popupAdd.querySelector('#popup__input-1');
 const addPopupImgSrc = popupAdd.querySelector('#popup__input-2');
+
 
 closeButtons.forEach((button) => {
   const popup = button.closest('.popup');
@@ -23,17 +26,17 @@ closeButtons.forEach((button) => {
 });
 
 profileEditButton.addEventListener('click', function() {
-  popupInput1.value = profileTitle.textContent;
-  popupInput2.value = profileSubtitle.textContent;
+  popupInputTitle.value = profileTitle.textContent;
+  popupInputSubtitle.value = profileSubtitle.textContent;
   openPopup(popupEdit);
 });
 
-popupEditForm.addEventListener('submit', popupValueToProfile);
+popupEditForm.addEventListener('submit', handleProfileFormSubmit);
 
-function popupValueToProfile (evt){
+function handleProfileFormSubmit (evt){
   evt.preventDefault();
-  profileTitle.textContent = popupInput1.value;
-  profileSubtitle.textContent = popupInput2.value;
+  profileTitle.textContent = popupInputTitle.value;
+  profileSubtitle.textContent = popupInputSubtitle.value;
   closePopup(popupEdit);
 }
 
@@ -73,9 +76,9 @@ function createCard (cardName, cardImgSrc) {
 
 function showCard(imgSrc, label) {
   openPopup(popupCard);
-  popupCard.querySelector('.popup__image').src = imgSrc;
-  popupCard.querySelector('.popup__label').textContent = label;
-  popupCard.querySelector('.popup__image').alt = label;
+  popupCardImage.src = imgSrc;
+  popupCardLabel.textContent = label;
+  popupCardImage.alt = label;
 }
 
 // массив с карточками из задания
