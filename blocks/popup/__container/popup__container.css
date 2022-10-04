@@ -10,6 +10,8 @@
     flex-direction: column;
     border-radius: 10px;
     padding-bottom: 37px;
+    min-height: 330px;
+    box-sizing: border-box;
 }
 
 @media screen and (max-width: 500px) {

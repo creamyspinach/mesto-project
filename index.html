@@ -111,18 +111,33 @@
         <form class="popup__form" name="popup-edit__form">
           <input
             class="popup__input"
-            id="popup__input-1"
+            id="inputName"
             name="popup-edit__input-1"
             value="Жак-Ив Кусто"
             type="text"
+            minlength="2"
+            maxlength="40"
+            pattern="^[A-Za-zА-Яа-яЁё\s-]+$"
+            data-error-pattern="поле может содержать только латинские буквы, кириллические буквы, знаки дефиса и пробелы"
+            data-error-empty="Вы пропустили это поле."
+            data-error-too-short=""
+            required
           />
+          <span class="popup__input-error inputName-error">asdfadsf</span>
           <input
             class="popup__input"
-            id="popup__input-2"
+            id="inputSubtitle"
             name="popup-edit__input-2"
             value="Исследователь океана"
             type="text"
+            minlength="2"
+            maxlength="200"
+            pattern="^[A-Za-zА-Яа-яЁё\s-]+$"
+            data-error-pattern="поле может содержать только латинские буквы, кириллические буквы, знаки дефиса и пробелы"
+            data-error-empty="Вы пропустили это поле."
+            required
           />
+          <span class="popup__input-error inputSubtitle-error">asdfasdf</span>
           <input class="popup__submit-button" value="сохранить" type="submit" />
         </form>
       </div>
