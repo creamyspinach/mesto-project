@@ -1,12 +1,12 @@
 const cardTemplate = document.querySelector('#card-template').content;
-const cardList = document.querySelector('.elements__cards');
-const popupAddSubmitForm = popupAdd.querySelector('.popup__form');
-const popupInputCardName = popupAdd.querySelector('#inputTitle');
-const popupInputLink = popupAdd.querySelector('#inputLink');
-import {popupAdd, popupCard, popupCardImage, popupCardLabel, showCard, closePopup} from './popupHandle.js';
+export const cardList = document.querySelector('.elements__cards');
+export const popupAddSubmitForm = popupAdd.querySelector('.popup__form');
+export const popupInputCardName = popupAdd.querySelector('#inputTitle');
+export const popupInputLink = popupAdd.querySelector('#inputLink');
+import {popupAdd, popupCard, popupCardImage, popupCardLabel, showCard, closePopup} from './modal.js';
 
 
-function createCard (cardName, cardImgSrc) {
+export function createCard (cardName, cardImgSrc) {
     const cardElement = cardTemplate.querySelector('.card').cloneNode(true);
   
     cardElement.querySelector('.card__subtitle').textContent = cardName;
@@ -29,7 +29,7 @@ function createCard (cardName, cardImgSrc) {
   }
 
   // массив с карточками из задания
-const initialCards = [
+export const initialCards = [
     {
       name: 'Архыз',
       link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
@@ -56,13 +56,5 @@ const initialCards = [
     }
   ];
 
-initialCards.forEach(function(item){
-  cardList.prepend(createCard(item.name, item.link));
-});
 
-popupAddSubmitForm.addEventListener('submit', function(evt){
-    evt.preventDefault();
-    cardList.prepend(createCard(popupInputCardName.value, popupInputLink.value));
-    closePopup(popupAdd);
-    popupAddSubmitForm.reset();
-});
+
