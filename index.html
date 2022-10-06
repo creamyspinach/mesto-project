@@ -120,10 +120,9 @@
             pattern="^[A-Za-zА-Яа-яЁё\s-]+$"
             data-error-pattern="поле может содержать только латинские буквы, кириллические буквы, знаки дефиса и пробелы"
             data-error-empty="Вы пропустили это поле."
-            data-error-too-short=""
             required
           />
-          <span class="popup__input-error inputName-error">asdfadsf</span>
+          <span class="popup__input-error inputName-error"></span>
           <input
             class="popup__input"
             id="inputSubtitle"
@@ -137,7 +136,7 @@
             data-error-empty="Вы пропустили это поле."
             required
           />
-          <span class="popup__input-error inputSubtitle-error">asdfasdf</span>
+          <span class="popup__input-error inputSubtitle-error"></span>
           <input class="popup__submit-button" value="сохранить" type="submit" />
         </form>
       </div>
@@ -152,20 +151,30 @@
         <form class="popup__form" name="popup-add__form">
           <input
             class="popup__input"
-            id="popup__input-1"
+            id="inputTitle"
             name="popup-add__input-1"
             placeholder="Название"
             value=""
             type="text"
+            minlength="2"
+            maxlength="30"
+            pattern="^[A-Za-zА-Яа-яЁё\s-]+$"
+            data-error-pattern="поле может содержать только латинские буквы, кириллические буквы, знаки дефиса и пробелы"
+            data-error-empty="Вы пропустили это поле."
+            required
           />
+          <span class="popup__input-error inputTitle-error">asdfasdf</span>
           <input
             class="popup__input"
-            id="popup__input-2"
+            id="inputLink"
             name="popup-add__input-2"
             placeholder="Ссылка на картинку"
             value=""
-            type="text"
+            type="url"
+            data-error-empty="Вы пропустили это поле."
+            required
           />
+          <span class="popup__input-error inputLink-error">asdfasdf</span>
           <input
             class="popup__submit-button"
             value="сохранить"
