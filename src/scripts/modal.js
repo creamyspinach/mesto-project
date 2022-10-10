@@ -33,6 +33,13 @@ export function handleProfileFormSubmit (evt){
   closePopup(popupEdit);
 }
 
+// const closePopupEsc = (evt) => {
+//   if (evt.key === 'Escape') {
+//       const popupOpened = document.querySelector('.popup_active');
+//       closePopup(popupOpened);
+//   }
+// }
+
 
 export function showCard(imgSrc, label) {
     openPopup(popupCard);
@@ -41,11 +48,4 @@ export function showCard(imgSrc, label) {
     popupCardImage.alt = label;
   }
 
-//   popupArr.forEach((popup) => {
-//     popup.addEventListener('keydown', (evt) => {
-//       if (evt.key = 'Escape') {
-//          closePopup(popup);
-//        }
-//     });
-//   });
-  
+

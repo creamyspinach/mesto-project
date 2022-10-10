@@ -1,6 +1,7 @@
-
-import {popupEditForm, profileTitle, profileSubtitle, handleProfileFormSubmit, openPopup, closePopup, profileEditButton, popupInputTitle, popupInputSubtitle, popupEdit, popupAdd, profileAddButton, closeButtons, popupArr} from './modal.js';
-import {popupAddSubmitForm, cardList, initialCards, createCard, popupInputCardName, popupInputLink} from './card.js';
+import './pages/index.css';
+import './scripts/validate.js';
+import {popupEditForm, profileTitle, profileSubtitle, handleProfileFormSubmit, openPopup, closePopup, profileEditButton, popupInputTitle, popupInputSubtitle, popupEdit, popupAdd, profileAddButton, closeButtons, popupArr} from './scripts/modal.js';
+import {popupAddSubmitForm, cardList, initialCards, createCard, popupInputCardName, popupInputLink} from './scripts/card.js';
 
 popupEditForm.addEventListener('submit', handleProfileFormSubmit);
 
@@ -36,4 +37,15 @@ popupArr.forEach((popup) => {
       closePopup(popup);
     } 
   });
+});
+
+document.addEventListener('keydown', (evt) => {
+    if (evt.key === 'Escape') {
+        const popupOpened = document.querySelector('.popup_active');
+        if (popupOpened !== null) {
+            closePopup(popupOpened);
+        } else {
+            return false;
+        }
+    }
 });

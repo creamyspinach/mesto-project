@@ -4,14 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./pages/index.css" />
     <title>Место</title>
   </head>
   <body class="page">
     <header class="header">
       <img
         class="header__logo"
-        src="./images/mesto-russia.svg"
+        src="<%=require('./images/mesto-russia.svg')%>"
         alt="логотип место"
       />
     </header>
@@ -19,7 +18,7 @@
       <section class="profile">
         <img
           class="profile__photo"
-          src="./images/profile-photo.jpg"
+          src="<%=require('./images/profile-photo.jpg')%>"
           alt="фото профиля"
         />
         <div class="profile__text-container">
@@ -31,70 +30,7 @@
       </section>
       <section class="elements">
         <ul class="elements__cards">
-          <!-- <li class="card">
-            <button class="card__delete-button"></button>
-            <img
-              class="card__image"
-              src="./images/moscow-strogino.jpg"
-              alt="москва строгино"
-            />
-            <div class="card__info">
-              <h2 class="card__subtitle">Строгино</h2>
-              <button class="card__heart-button" type="button"></button>
-            </div>
-          </li>
-          <li class="card">
-            <button class="card__delete-button"></button>
-            <img
-              class="card__image"
-              src="./images/abhaz-ldzaa.jpg"
-              alt="абхазия лдзаа"
-            />
-            <div class="card__info">
-              <h2 class="card__subtitle">Абхазия, Лдзаааааааааааааааааа</h2>
-              <button class="card__heart-button" type="button"></button>
-            </div>
-          </li>
-          <li class="card">
-            <button class="card__delete-button"></button>
-            <img class="card__image" src="./images/sochi.jpg" alt="сочи" />
-            <div class="card__info">
-              <h2 class="card__subtitle">Сочи</h2>
-              <button class="card__heart-button" type="button"></button>
-            </div>
-          </li>
-          <li class="card">
-            <button class="card__delete-button"></button>
-            <img
-              class="card__image"
-              src="./images/sochi-macesta.jpg"
-              alt="мацеста"
-            />
-            <div class="card__info">
-              <h2 class="card__subtitle">Мацеста</h2>
-              <button class="card__heart-button" type="button"></button>
-            </div>
-          </li>
-          <li class="card">
-            <button class="card__delete-button"></button>
-            <img
-              class="card__image"
-              src="./images/austria-tux.jpg"
-              alt="австрия тукс"
-            />
-            <div class="card__info">
-              <h2 class="card__subtitle">Австрия, Тукс</h2>
-              <button class="card__heart-button" type="button"></button>
-            </div>
-          </li>
-          <li class="card">
-            <button class="card__delete-button"></button>
-            <img class="card__image" src="./images/pestovo.jpg" alt="пестово" />
-            <div class="card__info">
-              <h2 class="card__subtitle">Пестово</h2>
-              <button class="card__heart-button" type="button"></button>
-            </div>
-          </li> -->
+          
         </ul>
       </section>
     </main>
@@ -208,8 +144,4 @@
       </div>
     </li>
   </template>
-  <script type="module" src="./scripts/index.js"></script>
-  <script type="module" src="./scripts/card.js"></script>
-  <script type="module" src="./scripts/validate.js"></script>
-  <script type="module" src="./scripts/modal.js"></script>
 </html>
