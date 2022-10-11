@@ -10,7 +10,7 @@
     <header class="header">
       <img
         class="header__logo"
-        src="<%=require('./images/mesto-russia.svg')%>"
+        src="<%=require('../images/mesto-russia.svg')%>"
         alt="логотип место"
       />
     </header>
@@ -18,7 +18,7 @@
       <section class="profile">
         <img
           class="profile__photo"
-          src="<%=require('./images/profile-photo.jpg')%>"
+          src="<%=require('../images/profile-photo.jpg')%>"
           alt="фото профиля"
         />
         <div class="profile__text-container">
@@ -51,6 +51,7 @@
             name="popup-edit__input-1"
             value="Жак-Ив Кусто"
             type="text"
+            placeholder="Имя"
             minlength="2"
             maxlength="40"
             pattern="^[A-Za-zА-Яа-яЁё\s-]+$"
@@ -65,6 +66,7 @@
             name="popup-edit__input-2"
             value="Исследователь океана"
             type="text"
+            placeholder="Вид деятельности"
             minlength="2"
             maxlength="200"
             pattern="^[A-Za-zА-Яа-яЁё\s-]+$"

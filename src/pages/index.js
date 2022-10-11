@@ -1,8 +1,10 @@
-import './pages/index.css';
-import './scripts/validate.js';
-import {popupEditForm, profileTitle, profileSubtitle, handleProfileFormSubmit, openPopup, closePopup, profileEditButton, popupInputTitle, popupInputSubtitle, popupEdit, popupAdd, profileAddButton, closeButtons, popupArr} from './scripts/modal.js';
-import {popupAddSubmitForm, cardList, initialCards, createCard, popupInputCardName, popupInputLink} from './scripts/card.js';
-
+import './index.css';
+import '../components/validate.js';
+import {handleProfileFormSubmit, openPopup, closePopup} from '../components/modal.js';
+import {createCard} from '../components/card.js';
+import {popupEditForm, profileTitle, profileSubtitle, profileEditButton, 
+  popupInputTitle, popupInputSubtitle, popupEdit, popupAdd, profileAddButton, closeButtons, popups, popupAddSubmitForm, 
+  cardList, popupInputCardName, initialCards, popupInputLink} from '../components/constants.js';
 popupEditForm.addEventListener('submit', handleProfileFormSubmit);
 
 popupAddSubmitForm.addEventListener('submit', function(evt){
@@ -31,7 +33,7 @@ closeButtons.forEach((button) => {
   button.addEventListener('click', () => closePopup(popup));
 });
 
-popupArr.forEach((popup) => {
+popups.forEach((popup) => {
   popup.addEventListener('click', (evt) => {
     if (evt.target.classList.contains('popup')) {
       closePopup(popup);
@@ -39,13 +41,3 @@ popupArr.forEach((popup) => {
   });
 });
 
-document.addEventListener('keydown', (evt) => {
-    if (evt.key === 'Escape') {
-        const popupOpened = document.querySelector('.popup_active');
-        if (popupOpened !== null) {
-            closePopup(popupOpened);
-        } else {
-            return false;
-        }
-    }
-});
