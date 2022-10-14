@@ -1,10 +1,10 @@
 import './index.css';
-import '../components/validate.js';
+import { removeFormValidationErrors } from '../components/validate.js';
 import {handleProfileFormSubmit, openPopup, closePopup} from '../components/modal.js';
 import {createCard} from '../components/card.js';
 import {popupEditForm, profileTitle, profileSubtitle, profileEditButton, 
   popupInputTitle, popupInputSubtitle, popupEdit, popupAdd, profileAddButton, closeButtons, popups, popupAddSubmitForm, 
-  cardList, popupInputCardName, initialCards, popupInputLink} from '../components/constants.js';
+  cardList, popupInputCardName, initialCards, popupInputLink, popupFormValidationSelectors} from '../components/constants.js';
 popupEditForm.addEventListener('submit', handleProfileFormSubmit);
 
 popupAddSubmitForm.addEventListener('submit', function(evt){
@@ -22,10 +22,12 @@ profileEditButton.addEventListener('click', function() {
   popupInputTitle.value = profileTitle.textContent;
   popupInputSubtitle.value = profileSubtitle.textContent;
   openPopup(popupEdit);
+  removeFormValidationErrors(popupEdit.querySelector('.popup__form'), popupFormValidationSelectors);
 });
 
 profileAddButton.addEventListener('click', function(){
   openPopup(popupAdd);
+  removeFormValidationErrors(popupAdd.querySelector('.popup__form'), popupFormValidationSelectors);
 });
 
 closeButtons.forEach((button) => {

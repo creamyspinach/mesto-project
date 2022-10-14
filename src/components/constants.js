@@ -18,6 +18,14 @@ export const cardList = document.querySelector('.elements__cards');
 export const popupAddSubmitForm = popupAdd.querySelector('.popup__form');
 export const popupInputCardName = popupAdd.querySelector('#inputTitle');
 export const popupInputLink = popupAdd.querySelector('#inputLink');
+export const popupFormValidationSelectors = {
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__submit-button',
+  inactiveButtonClass: 'popup__button_disabled',
+  inputErrorClass: 'popup__input_type_error',
+  errorClass: 'popup__input-error_active'
+}; 
 
   // массив с карточками из задания
   export const initialCards = [

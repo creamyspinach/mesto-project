@@ -5,11 +5,6 @@ import { enableValidation, hideInputError } from "./validate.js";
 export function openPopup(element) {
   element.classList.add('popup_active');
   document.addEventListener('keydown', closePopupOnEsc);
-  enableValidation();
-  const inputs = Array.from(element.querySelectorAll('.popup__input'));
-  inputs.forEach((input) => {
-    hideInputError(element.querySelector('.popup__form'), input);
-  });
 }
 
 export function closePopup(element) {
