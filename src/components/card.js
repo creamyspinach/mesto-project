@@ -22,8 +22,6 @@ export function createCard (cardName, cardImgSrc) {
 
     toggleCardLike(cardLike);
   
-    cardElement.querySelector('.card__heart-button')
-  
     cardElement.querySelector('.card__delete-button').addEventListener('click', function() {
       cardElement.remove();
     });
