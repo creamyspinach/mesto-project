@@ -1,5 +1,5 @@
 import './index.css';
-import { removeFormValidationErrors } from '../components/validate.js';
+import { removeFormValidationErrors, turnButtonValid, turnButtonInvalid } from '../components/validate.js';
 import {handleProfileFormSubmit, openPopup, closePopup} from '../components/modal.js';
 import {createCard} from '../components/card.js';
 import {popupEditForm, profileTitle, profileSubtitle, profileEditButton, 
@@ -28,6 +28,7 @@ profileEditButton.addEventListener('click', function() {
 profileAddButton.addEventListener('click', function(){
   openPopup(popupAdd);
   removeFormValidationErrors(popupAdd.querySelector('.popup__form'), popupFormValidationSelectors);
+  turnButtonInvalid(popupAdd.querySelector(popupFormValidationSelectors.submitButtonSelector, popupFormValidationSelectors.inactiveButtonClass));
 });
 
 closeButtons.forEach((button) => {
