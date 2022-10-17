@@ -28,7 +28,8 @@ profileEditButton.addEventListener('click', function() {
 profileAddButton.addEventListener('click', function(){
   openPopup(popupAdd);
   removeFormValidationErrors(popupAdd.querySelector('.popup__form'), popupFormValidationSelectors);
-  turnButtonInvalid(popupAdd.querySelector(popupFormValidationSelectors.submitButtonSelector, popupFormValidationSelectors.inactiveButtonClass));
+  console.log(popupFormValidationSelectors.inactiveButtonClass);
+  turnButtonInvalid(popupAdd.querySelector(popupFormValidationSelectors.submitButtonSelector), popupFormValidationSelectors.inactiveButtonClass);
 });
 
 closeButtons.forEach((button) => {
