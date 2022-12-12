@@ -18,6 +18,7 @@ export const cardList = document.querySelector('.elements__cards');
 export const popupAddSubmitForm = popupAdd.querySelector('.popup__form');
 export const popupInputCardName = popupAdd.querySelector('#inputTitle');
 export const popupInputLink = popupAdd.querySelector('#inputLink');
+export const profilePhoto = document.querySelector('.profile__photo');
 export const popupFormValidationSelectors = {
   formSelector: '.popup__form',
   inputSelector: '.popup__input',

@@ -1,5 +1,6 @@
 const cardTemplate = document.querySelector('#card-template').content;
 import {closePopup, showCard} from './modal.js';
+import { refreshCards } from './server.js';
 
 function getCardTemplate (template) {
   return template.querySelector('.card').cloneNode(true);

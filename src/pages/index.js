@@ -4,7 +4,9 @@ import {handleProfileFormSubmit, openPopup, closePopup} from '../components/moda
 import {createCard} from '../components/card.js';
 import {popupEditForm, profileTitle, profileSubtitle, profileEditButton, 
   popupInputTitle, popupInputSubtitle, popupEdit, popupAdd, profileAddButton, closeButtons, popups, popupAddSubmitForm, 
-  cardList, popupInputCardName, initialCards, popupInputLink, popupFormValidationSelectors} from '../components/constants.js';
+  cardList, popupInputCardName, initialCards, popupInputLink, popupFormValidationSelectors, profilePhoto} from '../components/constants.js';
+import { refreshProfile, refreshCards } from '../components/server';
+
 popupEditForm.addEventListener('submit', handleProfileFormSubmit);
 
 popupAddSubmitForm.addEventListener('submit', function(evt){
@@ -14,9 +16,13 @@ popupAddSubmitForm.addEventListener('submit', function(evt){
     popupAddSubmitForm.reset();
 });
 
-initialCards.forEach(function(item){
-    cardList.prepend(createCard(item.name, item.link));
-});
+// initialCards.forEach(function(item){
+//     cardList.prepend(createCard(item.name, item.link));
+// });
+
+// getCards().forEach(function(item){
+//   cardList.prepend(createCard(item.name, item.link));
+// });
 
 profileEditButton.addEventListener('click', function() {
   popupInputTitle.value = profileTitle.textContent;
@@ -45,3 +51,5 @@ popups.forEach((popup) => {
   });
 });
 
+refreshProfile();
+refreshCards();
