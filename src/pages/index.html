@@ -127,6 +127,10 @@
           class="popup__close-button"
           type="button"
         ></button>
+        <button
+          class="popup__close-button"
+          type="button"
+        ></button>
         <img
           class="popup__image"
           alt=""
@@ -135,14 +139,33 @@
         <label class="popup__label" >asdfasdf</label>
       </div>
     </div>
+    <div class="popup" id="popup-delete">
+      <div class="popup__container popup__container_type_delete">
+        <button
+          class="popup__close-button"
+          type="button"
+        ></button>
+        <h3 class="popup__heading">Вы уверены?</h3>
+        <form class="popup__form" name="popup-delete__form">
+          <input
+             class="popup__submit-button popup__submit-button_place_delete"
+              value="да"
+              type="submit"
+            />
+        </form>
+      </div>
+    </div>
   </body>
   <template id="card-template">
-    <li class="card">
+    <li class="card" data-card-id="0">
       <button class="card__delete-button"></button>
       <img class="card__image" alt="изображение, добавленное пользователем" />
       <div class="card__info">
         <h2 class="card__subtitle"></h2>
-        <button class="card__heart-button" type="button"></button>
+        <div class="card__like-container">
+          <button class="card__heart-button" type="button"></button>
+          <span class="card__heart-counter">0</span>
+        </div>
       </div>
     </li>
   </template>

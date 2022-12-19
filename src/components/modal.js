@@ -1,5 +1,6 @@
 import { profileTitle, popupInputTitle, profileSubtitle, popupInputSubtitle, popupEdit, popupCard, popupCardImage,
    popupCardLabel } from "./constants.js";
+import { refreshProfile } from "./server.js";
 import { enableValidation, hideInputError } from "./validate.js";
 
 export function openPopup(element) {
@@ -21,8 +22,27 @@ function closePopupOnEsc(evt) {
 
 export function handleProfileFormSubmit (evt){
   evt.preventDefault();
-  profileTitle.textContent = popupInputTitle.value;
-  profileSubtitle.textContent = popupInputSubtitle.value;
+  fetch('https://nomoreparties.co/v1/plus-cohort-15/users/me', {
+    method: 'PATCH',
+    headers: {
+      authorization: 'b79a7bcf-c1ec-44a0-a9b3-23fd8093a32f',
+      'Content-Type': 'application/json'
+  },
+    body: JSON.stringify({
+      name: popupInputTitle.value,
+      about: popupInputSubtitle.value
+   })
+  })
+  .then((res) =>{
+    if(res.ok) {
+      refreshProfile();
+      return res;
+    }
+    return Promise.reject(res.status);
+  })
+  .catch((err) => {
+    console.error(`Ошибка: %{err}`);
+  })
   closePopup(popupEdit);
 }
 
