@@ -7,9 +7,49 @@ function getCardTemplate (template) {
   return template.querySelector('.card').cloneNode(true);
 }
 
-function toggleCardLike (element) {
-  element.addEventListener('click', function(evt) {
-    evt.target.classList.toggle('card__heart-button_active');
+function toggleCardLike (element, cardId) {
+  element.addEventListener('click', function() {
+    const likeCounter = element.nextElementSibling;
+    element.classList.toggle('card__heart-button_active');
+    if (element.classList.contains('card__heart-button_active')) {
+      fetch(`https://nomoreparties.co/v1/plus-cohort-15/cards/likes/${cardId}`, {
+        method: 'PUT',
+        headers: {
+          authorization: 'b79a7bcf-c1ec-44a0-a9b3-23fd8093a32f',
+          'Content-Type': 'application/json'
+        }
+      })
+      .then((res) => {
+        if (res.ok) {
+          likeCounter.textContent = parseInt(likeCounter.textContent) + 1;
+          return res.json();
+        }
+        return Promise.reject(res.status);
+      })
+      .catch((err) => {
+        console.log(`Ошибка: ${err}`);
+        element.classList.toggle('card__heart-button_active');
+      })
+    } else {
+      fetch(`https://nomoreparties.co/v1/plus-cohort-15/cards/likes/${cardId}`, {
+        method: 'DELETE', 
+        headers: {
+          authorization: 'b79a7bcf-c1ec-44a0-a9b3-23fd8093a32f',
+          'Content-Type': 'application/json'
+        }
+      })
+      .then((res) => {
+        if (res.ok) {
+          likeCounter.textContent = parseInt(likeCounter.textContent) - 1;
+          return res.json();
+        }
+        return Promise.reject(res.status);
+      })
+      .catch((res) => {
+        console.log(`Ошибка: ${err}`);
+        element.classList.toggle('card__heart-button_active');
+      })
+    }
   });
 }
 
@@ -27,7 +67,7 @@ export function createCard (cardName, cardImgSrc, cardLikeIndex, cardOwnerId, ca
     cardImage.alt = cardName;
     cardLikeCounter.textContent = cardLikeIndex;
 
-    toggleCardLike(cardLike);
+    toggleCardLike(cardLike, cardId);
   
     cardElement.querySelector('.card__image').addEventListener('click', function(evt) {
       showCard(evt.target.src, evt.target.closest('.card').querySelector('.card__subtitle').textContent);
@@ -50,6 +90,7 @@ export function createCard (cardName, cardImgSrc, cardLikeIndex, cardOwnerId, ca
   
     return cardElement;
   }
+
 
 export function deleteCard (cardId, cardElement) {
   fetch(`https://nomoreparties.co/v1/plus-cohort-15/cards/${cardId}`, {
