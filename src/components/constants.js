@@ -11,16 +11,24 @@ export const popupCard = document.querySelector('.popup-card');
 export const popupCardImage = popupCard.querySelector('.popup__image');
 export const popupCardLabel = popupCard.querySelector('.popup__label');
 export const popupEditForm = popupEdit.querySelector('.popup__form');
+export const popupEditSubmitBtn = popupEditForm.querySelector('.popup__submit-button');
 export const profileTitle = profileTC.querySelector('.profile__title');
 export const profileSubtitle = profileTC.querySelector('.profile__subtitle');
 export const formList = Array.from(document.querySelectorAll('.popup__form'));
 export const cardList = document.querySelector('.elements__cards');
 export const popupAddSubmitForm = popupAdd.querySelector('.popup__form');
+export const popupAddSubmitBtn = popupAddSubmitForm.querySelector('.popup__submit-button');
 export const popupInputCardName = popupAdd.querySelector('#inputTitle');
 export const popupInputLink = popupAdd.querySelector('#inputLink');
 export const profilePhoto = document.querySelector('.profile__photo');
 export const popupDelete = document.querySelector('#popup-delete');
 export const popupDeleteForm = popupDelete.querySelector('.popup__form');
+export const popupDeleteSubmitBtn = popupDeleteForm.querySelector('.popup__submit-button')
+export const profileAvatarButton = document.querySelector('.profile__photo-hover-element');
+export const popupAvatar = document.querySelector('#popup-avatar');
+export const popupAvatarSubmitForm = popupAvatar.querySelector('.popup__form');
+export const popupAvatarLink = popupAvatar.querySelector('#inputLink');
+export const popupAvatarSubmitBtn = popupAvatarSubmitForm.querySelector('.popup__submit-button');
 export const popupFormValidationSelectors = {
   formSelector: '.popup__form',
   inputSelector: '.popup__input',

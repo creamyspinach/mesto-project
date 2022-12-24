@@ -1,7 +1,18 @@
 import { profileTitle, popupInputTitle, profileSubtitle, popupInputSubtitle, popupEdit, popupCard, popupCardImage,
-   popupCardLabel } from "./constants.js";
-import { refreshProfile } from "./server.js";
+   popupCardLabel, popupInputCardName, popupInputLink, popupAdd, popupAddSubmitForm, popupAvatarLink, popupAvatar,
+   profilePhoto, popupEditSubmitBtn, popupAddSubmitBtn, cardList, popupAvatarSubmitBtn } from "./constants.js";
+import { getCardsRequest, getProfileRequest, patchAvatarRequest, patchProfileRequest, postCardRequest } from "./api.js";
 import { enableValidation, hideInputError } from "./validate.js";
+import { createCard } from "./card.js";
+
+export let handleDeleteCardSubmit;
+export const setDeleteCardHandle = (handle) => {
+  handleDeleteCardSubmit = handle;
+}
+
+export const deleteCardStarter = () => {
+  handleDeleteCardSubmit();
+}
 
 export function openPopup(element) {
   element.classList.add('popup_active');
@@ -22,28 +33,52 @@ function closePopupOnEsc(evt) {
 
 export function handleProfileFormSubmit (evt){
   evt.preventDefault();
-  fetch('https://nomoreparties.co/v1/plus-cohort-15/users/me', {
-    method: 'PATCH',
-    headers: {
-      authorization: 'b79a7bcf-c1ec-44a0-a9b3-23fd8093a32f',
-      'Content-Type': 'application/json'
-  },
-    body: JSON.stringify({
-      name: popupInputTitle.value,
-      about: popupInputSubtitle.value
-   })
-  })
-  .then((res) =>{
-    if(res.ok) {
-      refreshProfile();
-      return res;
-    }
-    return Promise.reject(res.status);
+  popupEditSubmitBtn.value = 'Сохранение...';
+  patchProfileRequest(popupInputTitle.value, popupInputSubtitle.value)
+  .then((data) => {
+    profileTitle.textContent = data.name;
+    profileSubtitle.textContent = data.about;
+    closePopup(popupEdit)
   })
   .catch((err) => {
-    console.error(`Ошибка: %{err}`);
+    console.error(`Ошибка: ${err}`);
   })
-  closePopup(popupEdit);
+  .finally(() => {
+    popupEditSubmitBtn.value = 'Сохранить';
+  })
+}
+
+export function handleAddCardFormSubmit (evt) {
+  evt.preventDefault();
+  popupAddSubmitBtn.value = 'Сохранение...';
+  postCardRequest(popupInputCardName.value, popupInputLink.value)
+  .then((data) =>{
+      cardList.prepend(createCard(data.name, data.link, data.likes.length, data.owner._id, data._id));
+      closePopup(popupAdd);
+      popupAddSubmitForm.reset();
+  })
+  .catch((err) => {
+    console.error(`Ошибка: ${err}`);
+  })
+  .finally(() => {
+    popupAddSubmitBtn.value = 'Сохранить';
+  })
+}
+
+export function handleProfileAvatarFormSubmit (evt) {
+  evt.preventDefault();
+  popupAvatarSubmitBtn.value = 'Сохранение...';
+  patchAvatarRequest(popupAvatarLink.value)
+  .then((data) => {
+      profilePhoto.src = data.avatar;
+      closePopup(popupAvatar);
+    })
+  .catch((err) => {
+    console.error(`Ошибка: ${err}`);
+  })
+  .finally(() => {
+    popupAvatarSubmitBtn.value = 'Сохранить';
+  })
 }
 
 export function showCard(imgSrc, label) {

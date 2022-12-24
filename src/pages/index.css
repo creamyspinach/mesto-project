@@ -43,3 +43,6 @@
 @import url(../blocks/card/__delete-button/_active/card__delete-button_active.css);
 @import url(../blocks/popup/__container/_type/popup__container_type_delete.css);
 @import url(../blocks/popup/__submit-button/_place/popup__submit-button_place_delete.css);
+@import url(../blocks/profile/__photo-container/profile__photo-container.css);
+@import url(../blocks/profile/__photo-hover-element/profile__photo-hover-element.css);
+@import url(../blocks/popup/__container/_type/popup__container_type_avatar.css);

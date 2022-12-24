@@ -16,11 +16,14 @@
     </header>
     <main class="content">
       <section class="profile">
-        <img
-          class="profile__photo"
-          src="<%=require('../images/profile-photo.jpg')%>"
-          alt="фото профиля"
-        />
+        <div class="profile__photo-container">
+          <img
+            class="profile__photo"
+            src="<%=require('../images/profile-photo.jpg')%>"
+            alt="фото профиля"
+          />
+          <div class="profile__photo-hover-element"></div>
+        </div>
         <div class="profile__text-container">
           <h1 class="profile__title">Жак-Ив Кусто</h1>
           <button class="profile__edit-button" type="button"></button>
@@ -148,8 +151,35 @@
         <h3 class="popup__heading">Вы уверены?</h3>
         <form class="popup__form" name="popup-delete__form">
           <input
-             class="popup__submit-button popup__submit-button_place_delete"
+              class="popup__submit-button popup__submit-button_place_delete"
               value="да"
+              type="submit"
+            />
+        </form>
+      </div>
+    </div>
+    <div class="popup" id="popup-avatar">
+      <div class="popup__container popup__container_type_avatar">
+        <button
+          class="popup__close-button"
+          type="button"
+        ></button>
+        <h3 class="popup__heading">Обновить аватар</h3>
+        <form class="popup__form" name="popup-avatar__form">
+          <input
+            class="popup__input"
+            id="inputLink"
+            name="popup-avatar__input"
+            placeholder="Ссылка на картинку"
+            value=""
+            type="url"
+            data-error-empty="Вы пропустили это поле."
+            required
+          />
+          <span class="popup__input-error inputLink-error">asdfasdf</span>
+          <input
+              class="popup__submit-button popup__submit-button_place_avatar"
+              value="Сохранить"
               type="submit"
             />
         </form>
