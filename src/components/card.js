@@ -64,20 +64,23 @@ export function createCard (cardName, cardImgSrc, cardLikesArr, cardOwnerId, car
   if (profileData._id === cardOwnerId) {
     cardDeleteBtn.classList.add('card__delete-button_active');
   }
-   cardDeleteBtn.addEventListener('click', function(evt) {
-     openPopup(popupDelete);
+  cardDeleteBtn.addEventListener('click', function() {
+    openPopup(popupDelete);
 
-     setDeleteCardHandle (() => {
-      deleteCardRequest(cardId)
-      .then(() => {
-        cardElement.remove();
-        closePopup(popupDelete);
-      })
-      .catch((err) => {
-        console.error(`Ошибка: ${err}`);
-     });
+    setDeleteCardHandle (() => {
+     deleteCardRequest(cardId)
+     .then(() => {
+       cardElement.remove();
+       closePopup(popupDelete);
+     })
+     .catch((err) => {
+       console.error(`Ошибка: ${err}`);
+    })
+    .finally(() => {
+     popupDeleteSubmitBtn.value = 'Да';
     });
    });
+  });
 
   return cardElement;
 }
