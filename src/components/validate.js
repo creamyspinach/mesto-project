@@ -1,4 +1,4 @@
-import { formList, popupFormValidationSelectors } from "./constants.js";
+import { popupFormValidationSelectors } from "./constants.js";
 
 const showInputError = (formElement, inputElement, errorMessage, validationConfig) => {
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);

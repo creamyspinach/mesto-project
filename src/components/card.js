@@ -1,6 +1,6 @@
 const cardTemplate = document.querySelector('#card-template').content;
-import {closePopup, openPopup, showCard, handleDeleteCardSubmit, setDeleteCardHandle} from './modal.js';
-import { refreshCards, profileData, deleteCardRequest, putCardLikeRequest, deleteCardLikeRequest, postCardRequest } from './api.js';
+import {closePopup, openPopup, showCard, setDeleteCardHandle} from './modal.js';
+import { profileData, deleteCardRequest, putCardLikeRequest, deleteCardLikeRequest } from './api.js';
 import { popupDelete, popupDeleteForm, popupDeleteSubmitBtn } from './constants.js';
 
 export let nearlyDeletedCardId;

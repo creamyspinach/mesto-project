@@ -1,13 +1,13 @@
 import './index.css';
-import { removeFormValidationErrors, turnButtonValid, turnButtonInvalid } from '../components/validate.js';
+import { removeFormValidationErrors, turnButtonInvalid } from '../components/validate.js';
 import {handleProfileFormSubmit, openPopup, closePopup, handleAddCardFormSubmit, handleProfileAvatarFormSubmit, 
-  handleDeleteCardSubmit, deleteCardStarter} from '../components/modal.js';
-import {createCard, deleteCard} from '../components/card.js';
+ deleteCardStarter} from '../components/modal.js';
+import {createCard} from '../components/card.js';
 import {popupEditForm, profileTitle, profileSubtitle, profileEditButton, 
   popupInputTitle, popupInputSubtitle, popupEdit, popupAdd, profileAddButton, closeButtons, popups, popupAddSubmitForm, 
-  cardList, popupInputCardName, initialCards, popupInputLink, popupFormValidationSelectors, profilePhoto, popupDelete, 
+  cardList, popupFormValidationSelectors, profilePhoto,
   popupDeleteForm, popupAvatar, profileAvatarButton, popupAvatarSubmitForm, popupAvatarLink} from '../components/constants.js';
-import {getCardsRequest, getProfileRequest, profileData, setProfileData } from '../components/api';
+import {getCardsRequest, getProfileRequest, setProfileData } from '../components/api';
 
 
 popupEditForm.addEventListener('submit', handleProfileFormSubmit);

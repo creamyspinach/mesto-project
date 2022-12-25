@@ -1,7 +1,3 @@
-import {profileTitle, profileSubtitle, profilePhoto, cardList} from './constants.js';
-import {createCard} from './card.js';
-
-
 export const cohortId = 'plus-cohort-15'
 export const config = {
   url: `https://nomoreparties.co/v1/${cohortId}`,
@@ -12,7 +8,6 @@ export const config = {
 }
 
 export let profileData;
-export let nearlyDeletedCardId;
 
 export const setProfileData = (data) => {
   profileData = data;
@@ -66,4 +61,3 @@ export const putCardLikeRequest = (cardId) => {
 export const deleteCardLikeRequest = (cardId) => {
   return makeFetchRequest("DELETE", `/cards/likes/${cardId}`);
 }
-

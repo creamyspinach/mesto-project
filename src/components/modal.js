@@ -1,8 +1,7 @@
 import { profileTitle, popupInputTitle, profileSubtitle, popupInputSubtitle, popupEdit, popupCard, popupCardImage,
    popupCardLabel, popupInputCardName, popupInputLink, popupAdd, popupAddSubmitForm, popupAvatarLink, popupAvatar,
    profilePhoto, popupEditSubmitBtn, popupAddSubmitBtn, cardList, popupAvatarSubmitBtn, popupDeleteSubmitBtn } from "./constants.js";
-import { getCardsRequest, getProfileRequest, patchAvatarRequest, patchProfileRequest, postCardRequest } from "./api.js";
-import { enableValidation, hideInputError } from "./validate.js";
+import { patchAvatarRequest, patchProfileRequest, postCardRequest } from "./api.js";
 import { createCard } from "./card.js";
 
 export let handleDeleteCardSubmit;
