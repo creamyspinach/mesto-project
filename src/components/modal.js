@@ -3,6 +3,7 @@ import { profileTitle, popupInputTitle, profileSubtitle, popupInputSubtitle, pop
    profilePhoto, popupEditSubmitBtn, popupAddSubmitBtn, cardList, popupAvatarSubmitBtn, popupDeleteSubmitBtn } from "./constants.js";
 import { patchAvatarRequest, patchProfileRequest, postCardRequest } from "./api.js";
 import { createCard } from "./card.js";
+import { renderLoading } from "./utils.js";
 
 export let handleDeleteCardSubmit;
 export const setDeleteCardHandle = (handle) => {
@@ -10,7 +11,7 @@ export const setDeleteCardHandle = (handle) => {
 }
 
 export const deleteCardStarter = () => {
-  popupDeleteSubmitBtn.value = 'Удаление...';
+  renderLoading('deleteOn', popupDeleteSubmitBtn);
   handleDeleteCardSubmit();
 }
 
@@ -33,7 +34,7 @@ function closePopupOnEsc(evt) {
 
 export function handleProfileFormSubmit (evt){
   evt.preventDefault();
-  popupEditSubmitBtn.value = 'Сохранение...';
+  renderLoading('saveOn', popupEditSubmitBtn);
   patchProfileRequest(popupInputTitle.value, popupInputSubtitle.value)
   .then((data) => {
     profileTitle.textContent = data.name;
@@ -44,13 +45,13 @@ export function handleProfileFormSubmit (evt){
     console.error(`Ошибка: ${err}`);
   })
   .finally(() => {
-    popupEditSubmitBtn.value = 'Сохранить';
+    renderLoading('saveOff', popupEditSubmitBtn);
   })
 }
 
 export function handleAddCardFormSubmit (evt) {
   evt.preventDefault();
-  popupAddSubmitBtn.value = 'Сохранение...';
+  renderLoading('saveOn', popupAddSubmitBtn);
   postCardRequest(popupInputCardName.value, popupInputLink.value)
   .then((data) =>{
       cardList.prepend(createCard(data.name, data.link, data.likes.length, data.owner._id, data._id));
@@ -61,13 +62,13 @@ export function handleAddCardFormSubmit (evt) {
     console.error(`Ошибка: ${err}`);
   })
   .finally(() => {
-    popupAddSubmitBtn.value = 'Сохранить';
+    renderLoading('saveOff', popupAddSubmitBtn);
   })
 }
 
 export function handleProfileAvatarFormSubmit (evt) {
   evt.preventDefault();
-  popupAvatarSubmitBtn.value = 'Сохранение...';
+  renderLoading('saveOn', popupAvatarSubmitBtn);
   patchAvatarRequest(popupAvatarLink.value)
   .then((data) => {
       profilePhoto.src = data.avatar;
@@ -77,7 +78,7 @@ export function handleProfileAvatarFormSubmit (evt) {
     console.error(`Ошибка: ${err}`);
   })
   .finally(() => {
-    popupAvatarSubmitBtn.value = 'Сохранить';
+    renderLoading('saveOff', popupAvatarSubmitBtn);
   })
 }
 

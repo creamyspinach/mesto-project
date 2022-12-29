@@ -9,7 +9,6 @@ import {popupEditForm, profileTitle, profileSubtitle, profileEditButton,
   popupDeleteForm, popupAvatar, profileAvatarButton, popupAvatarSubmitForm, popupAvatarLink} from '../components/constants.js';
 import {getCardsRequest, getProfileRequest, setProfileData } from '../components/api';
 
-
 popupEditForm.addEventListener('submit', handleProfileFormSubmit);
 
 popupAddSubmitForm.addEventListener('submit', handleAddCardFormSubmit);
@@ -34,7 +33,8 @@ profileAddButton.addEventListener('click', function(){
 profileAvatarButton.addEventListener('click', function(){
   openPopup(popupAvatar);
   popupAvatarLink.value = "";
-  removeFormValidationErrors(popupAvatar.querySelector('.popup__form'), popupFormValidationSelectors)
+  removeFormValidationErrors(popupAvatar.querySelector('.popup__form'), popupFormValidationSelectors);
+  turnButtonInvalid(popupAvatar.querySelector(popupFormValidationSelectors.submitButtonSelector), popupFormValidationSelectors.inactiveButtonClass);
 });
 
 closeButtons.forEach((button) => {

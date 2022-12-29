@@ -2,8 +2,7 @@ const cardTemplate = document.querySelector('#card-template').content;
 import {closePopup, openPopup, showCard, setDeleteCardHandle} from './modal.js';
 import { profileData, deleteCardRequest, putCardLikeRequest, deleteCardLikeRequest } from './api.js';
 import { popupDelete, popupDeleteForm, popupDeleteSubmitBtn } from './constants.js';
-
-export let nearlyDeletedCardId;
+import { renderLoading } from "./utils.js";
 
 function getCardTemplate (template) {
   return template.querySelector('.card').cloneNode(true);
@@ -34,8 +33,6 @@ function toggleCardLike (element, cardId) {
     }
   });
 }
-
-
 
 export function createCard (cardName, cardImgSrc, cardLikesArr, cardOwnerId, cardId) {
   const cardElement = getCardTemplate(cardTemplate);
@@ -77,7 +74,7 @@ export function createCard (cardName, cardImgSrc, cardLikesArr, cardOwnerId, car
        console.error(`Ошибка: ${err}`);
     })
     .finally(() => {
-     popupDeleteSubmitBtn.value = 'Да';
+     renderLoading('deleteOff', popupDeleteSubmitBtn);
     });
    });
   });
@@ -87,8 +84,4 @@ export function createCard (cardName, cardImgSrc, cardLikesArr, cardOwnerId, car
 
 export function setDeleteListenerOnPopup() {
   popupDeleteForm.addEventListener('submit', deleteCard());
-}
-
-export function deleteCard (evt) {
-  
 }
