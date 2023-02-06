@@ -1,7 +1,7 @@
 import { profileTitle, popupInputTitle, profileSubtitle, popupInputSubtitle, popupEdit, popupCard, popupCardImage,
    popupCardLabel, popupInputCardName, popupInputLink, popupAdd, popupAddSubmitForm, popupAvatarLink, popupAvatar,
    profilePhoto, popupEditSubmitBtn, popupAddSubmitBtn, cardList, popupAvatarSubmitBtn, popupDeleteSubmitBtn } from "./constants.js";
-import { patchAvatarRequest, patchProfileRequest, postCardRequest } from "./api.js";
+import { patchAvatarRequest, patchProfileRequest, postCardRequest } from "./Api.js";
 import { createCard } from "./card.js";
 import { renderLoading } from "./utils.js";
 

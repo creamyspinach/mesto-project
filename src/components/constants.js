@@ -36,4 +36,12 @@ export const popupFormValidationSelectors = {
   inactiveButtonClass: 'popup__submit-button_disabled',
   inputErrorClass: 'popup__input_type_error',
   errorClass: 'popup__input-error_active'
-}; 
+};
+export const cohortId = 'plus-cohort-15';
+export const config = {
+  url: `https://nomoreparties.co/v1/${cohortId}`,
+  headers: {
+    authorization: 'b79a7bcf-c1ec-44a0-a9b3-23fd8093a32f',
+    'Content-Type': 'application/json'
+  }
+}
